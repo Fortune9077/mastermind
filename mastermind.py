@@ -51,8 +51,12 @@ while 1:
     for event in pygame.event.get():
 
         if event.type == pygame.QUIT:
-
             pygame.quit()
-
             quit()
+            
+        if event.type == MOUSEBUTTONDOWN:
+            if event.button == 1:
+                if pygame.mouse.get_pos()[0]>= 250 and pygame.mouse.get_pos()[0] <= 470:
+                    print(" Button range!")
+                
         pygame.display.update()
