@@ -21,22 +21,29 @@ font_1 = pygame.font.Font("freesansbold.ttf",24)
 
 
 
-text = font.render('MASTERMIND', True, col_1 )
-texty = font_1.render('START GAME',True,col_2)
+title = font.render('MASTERMIND', True, col_1 )
+start_button = font_1.render('START GAME',True,col_2)
+instruct_button = font_1.render('INSTRUCTIONS',True, col_2)
+exit_button = font_1.render('EXIT GAME',True,col_2 )
 
 
 
-def button():
-    pygame.draw.rect(screen,col_1,(250,230,220,50))
+def button(x,y,w,h):
+    pygame.draw.rect(screen,col_1,(x,y,w,h))
 
 
 
 while 1:
     screen.fill(col_3)
 
-    screen.blit(text,(210,60))
-    button()
-    screen.blit(texty,(300,250))
+    screen.blit(title,(210,60))
+    button(250,230,220,50)
+    button(250,310,220,50)
+    button(250,390,220,50)
+
+    screen.blit(start_button,(300,250))
+    screen.blit(instruct_button,(300,330))
+    screen.blit(exit_button,(300,410))
     
     
     pygame.display.update()
