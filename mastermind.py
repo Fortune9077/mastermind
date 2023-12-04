@@ -4,6 +4,7 @@ import os
 '''os.environ['SDL_AUDIODRIVER'] = 'dsp' '''
 import random 
 import math 
+import sys
 
 
 pygame.init()
@@ -62,5 +63,6 @@ while 1:
                     if pygame.mouse.get_pos()[1]>= 310 and pygame.mouse.get_pos()[1] <= 360:
                         print('Instructions')
                     if pygame.mouse.get_pos()[1]>= 390 and pygame.mouse.get_pos()[1] <=440:
-                        print('Exit Game')
+                        pygame.quit()
+                        sys.exit()
         pygame.display.update()
