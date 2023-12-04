@@ -36,14 +36,14 @@ def button(x,y,w,h):
 while 1:
     screen.fill(col_3)
 
-    screen.blit(title,(210,60))
-    button(250,230,220,50)
-    button(250,310,220,50)
-    button(250,390,220,50)
+    screen.blit(title,(180,60))
+    button(230,230,220,50)
+    button(230,310,220,50)
+    button(230,390,220,50)
 
-    screen.blit(start_button,(300,250))
-    screen.blit(instruct_button,(300,330))
-    screen.blit(exit_button,(300,410))
+    screen.blit(start_button,(272,245))
+    screen.blit(instruct_button,(253,325))
+    screen.blit(exit_button,(275,405))
     
     
     pygame.display.update()
@@ -56,7 +56,11 @@ while 1:
             
         if event.type == MOUSEBUTTONDOWN:
             if event.button == 1:
-                if pygame.mouse.get_pos()[0]>= 250 and pygame.mouse.get_pos()[0] <= 470:
-                    print(" Button range!")
-                
+                if pygame.mouse.get_pos()[0]>= 230 and pygame.mouse.get_pos()[0] <= 450:
+                    if pygame.mouse.get_pos()[1]>= 230 and pygame.mouse.get_pos()[1] <=280:
+                        print('START GAME')
+                    if pygame.mouse.get_pos()[1]>= 310 and pygame.mouse.get_pos()[1] <= 360:
+                        print('Instructions')
+                    if pygame.mouse.get_pos()[1]>= 390 and pygame.mouse.get_pos()[1] <=440:
+                        print('Exit Game')
         pygame.display.update()
