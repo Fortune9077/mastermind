@@ -5,6 +5,9 @@ import os
 import random 
 import math 
 import sys
+import tkinter
+from tkinter import *
+from tkinter import messagebox
 
 
 pygame.init()
@@ -61,7 +64,14 @@ while 1:
                     if pygame.mouse.get_pos()[1]>= 230 and pygame.mouse.get_pos()[1] <=280:
                         print('START GAME')
                     if pygame.mouse.get_pos()[1]>= 310 and pygame.mouse.get_pos()[1] <= 360:
-                        print('Instructions')
+                        Tk().wm_withdraw()
+                        messagebox.showinfo('Instructions','''You can only use numbers 1-7 as guesses!
+                                                            You can only use each number once!
+                                                            Your guess must consist of 4 numbers!
+                                            If your guessed number is in the computer generated list of number but not in the right postion the computer returns WHITE
+                                            If your guessed number is in the computer generated list of number and in the right postion the computer returns RED
+                                            If your guessed number is not in the computer generated list the computer returns BLACK
+                                            ''')                                        
                     if pygame.mouse.get_pos()[1]>= 390 and pygame.mouse.get_pos()[1] <=440:
                         pygame.quit()
                         sys.exit()
